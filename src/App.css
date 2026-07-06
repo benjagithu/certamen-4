@@ -122,3 +122,14 @@ button:hover {
 .btn-delete {
   background-color: #dc3545; 
 }
+/* =========================================
+   Contador de Tareas
+   ========================================= */
+.item-counter {
+  font-size: 16px;
+  font-weight: 600;
+  color: #666666;
+  margin-top: -15px; /* Sube un poco el texto para que quede pegado al título */
+  margin-bottom: 20px;
+  text-align: left;
+}

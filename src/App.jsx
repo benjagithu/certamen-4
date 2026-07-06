@@ -24,8 +24,14 @@ function App() {
     }
   };
 
+  // CONFIRMACIÓN AL ELIMINAR
   const deleteItem = (id) => {
-    setItems(items.filter(item => item.id !== id));
+    // Esto abre la ventana del navegador. Si el usuario da "Aceptar", confirmar es true.
+    const confirmar = window.confirm("¿Estás seguro de que deseas eliminar este elemento?");
+    
+    if (confirmar) {
+      setItems(items.filter(item => item.id !== id));
+    }
   };
 
   const editItem = (item) => {
@@ -35,6 +41,10 @@ function App() {
   return (
     <div className="app-container">
       <h1 className="app-title">CRUD con LocalStorage</h1>
+      
+      {/* CONTADOR DE ELEMENTOS */}
+      <p className="item-counter">Total: {items.length}</p>
+
       <Form addOrUpdateItem={addOrUpdateItem} itemToEdit={itemToEdit} />
       <List items={items} deleteItem={deleteItem} editItem={editItem} />
     </div>
