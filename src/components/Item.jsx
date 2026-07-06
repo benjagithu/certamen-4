@@ -1,0 +1,15 @@
+import React from 'react';
+
+function Item({ item, deleteItem, editItem }) {
+  return (
+    <li className="list-item">
+      <span className="item-text">{item.value}</span>
+      <div className="action-buttons">
+        <button className="btn-edit" onClick={() => editItem(item)}>Editar</button>
+        <button className="btn-delete" onClick={() => deleteItem(item.id)}>Eliminar</button>
+      </div>
+    </li>
+  );
+}
+
+export default Item;
